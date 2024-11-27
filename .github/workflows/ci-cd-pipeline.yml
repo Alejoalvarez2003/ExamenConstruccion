@@ -21,9 +21,7 @@ jobs:
       uses: actions/setup-java@v2  # Configura Java en la versión 11
       with:
         java-version: '11'  # Utiliza JDK 11
-
-    - name: Install Maven
-      run: sudo apt-get install maven  # Instala Maven si no está instalado
+        distribution: 'adoptopenjdk'  # Distribución de OpenJDK (ahora Adoptium)
 
     - name: Cache Maven dependencies
       uses: actions/cache@v2  # Utiliza caching para acelerar la instalación de dependencias
@@ -49,6 +47,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adoptopenjdk'
 
     - name: Run tests with Maven
       run: mvn test  # Ejecuta las pruebas unitarias con Maven
@@ -67,6 +66,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adoptopenjdk'
 
     - name: Deploy the application
       run: |
@@ -74,4 +74,3 @@ jobs:
         # Aquí puedes agregar el código necesario para el despliegue
         # Por ejemplo, empaquetar el proyecto en un archivo JAR
         mvn package
-        # O puedes usar un servidor local o cualquier servicio de despliegue
