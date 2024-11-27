@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-java@v2  # Configura Java en la versión 11
       with:
         java-version: '11'  # Utiliza JDK 11
-        distribution: 'adoptium'  # Nueva distribución compatible
+        distribution: 'temurin'  # Distribución Temurin
 
     - name: Cache Maven dependencies
       uses: actions/cache@v2  # Utiliza caching para acelerar la instalación de dependencias
@@ -47,7 +47,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adoptium'
+        distribution: 'temurin'
 
     - name: Run tests with Maven
       run: mvn test  # Ejecuta las pruebas unitarias con Maven
@@ -66,7 +66,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adoptium'
+        distribution: 'temurin'
 
     - name: Deploy the application
       run: |
